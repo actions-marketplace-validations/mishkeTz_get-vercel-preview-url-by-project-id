@@ -1,0 +1,31 @@
+{
+  "name": "get-vercel-preview-url",
+  "version": "1.2.2",
+  "description": "Github Action used to get the preview url of a vercel deployment",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktorJT/Get-Vercel-preview-url.git"
+  },
+  "keywords": [
+    "action",
+    "vercel",
+    "preview-url"
+  ],
+  "author": "Viktor Jensen-Torp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ViktorJT/Get-Vercel-preview-url/issues"
+  },
+  "homepage": "https://github.com/ViktorJT/Get-Vercel-preview-url#readme",
+  "dependencies": {
+    "@actions/core": "^1.8.2",
+    "@actions/github": "^5.0.3",
+    "@vercel/ncc": "^0.33.4",
+    "node-fetch": "^2.6.7"
+  }
+}
