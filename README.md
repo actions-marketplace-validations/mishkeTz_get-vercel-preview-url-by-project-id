@@ -13,7 +13,7 @@ Inside your `.github/workflows/{your-workflow}.yml` file:
 ```yml
 - name: Get Vercel Preview URL
   id: get-vercel-preview-url-by-project-id
-  uses: mishkeTz/get-vercel-preview-url-by-project-id@1.0.1
+  uses: mishkeTz/get-vercel-preview-url-by-project-id@1.0.0
   with:
     vercel_access_token: ${{ secrets.VERCEL_ACCESS_TOKEN }}
     vercel_team_id: ${{ secrets.VERCEL_TEAM_ID }}
