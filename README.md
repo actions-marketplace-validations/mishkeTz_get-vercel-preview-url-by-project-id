@@ -13,10 +13,11 @@ Inside your `.github/workflows/{your-workflow}.yml` file:
 ```yml
 - name: Get Vercel Preview URL
   id: get-vercel-preview-url-by-project-id
-  uses: mishkeTz/get-vercel-preview-url-by-project-id@1.0.0
+  uses: mishkeTz/get-vercel-preview-url-by-project-id@1.0.1
   with:
     vercel_access_token: ${{ secrets.VERCEL_ACCESS_TOKEN }}
     vercel_team_id: ${{ secrets.VERCEL_TEAM_ID }}
+    vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
     gh_token: ${{ secrets.GITHUB_TOKEN }}
 
 - name: Echo preview
@@ -66,6 +67,7 @@ jobs:
         with:
           vercel_access_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_team_id: ${{ secrets.VERCEL_TEAM_ID }}
+          vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Lighthouse audit on preview urls
