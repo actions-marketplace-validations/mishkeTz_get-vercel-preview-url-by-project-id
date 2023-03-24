@@ -18,6 +18,7 @@ const main = async () => {
   try {
     const vercel_team_id = core.getInput('vercel_team_id', {required: true});
     const vercel_access_token = core.getInput('vercel_access_token', {required: true});
+    const vercel_project_id = core.getInput('vercel_project_id', {required: true});
     const gh_token = core.getInput('gh_token', {required: true});
     const timeout = core.getInput('timeout');
     const limit = core.getInput('limit');
@@ -27,7 +28,7 @@ const main = async () => {
     if (limit > 100) core.setFailed('Maximum pagination limit is 100');
 
     const {deployments} = await fetch(
-      `https://api.vercel.com/v6/deployments?teamId=${vercel_team_id}&limit=${limit}`,
+      `https://api.vercel.com/v6/deployments?teamId=${vercel_team_id}&limit=${limit}&projectId=${vercel_project_id}`,
       {
         method: 'GET',
         headers: {
