@@ -12,15 +12,15 @@ Inside your `.github/workflows/{your-workflow}.yml` file:
 
 ```yml
 - name: Get Vercel Preview URL
-  id: get-vercel-preview-url
-  uses: mishkeTz/get-vercel-preview-url@1.0.0
+  id: get-vercel-preview-url-by-project-id
+  uses: mishkeTz/get-vercel-preview-url-by-project-id@1.0.0
   with:
     vercel_access_token: ${{ secrets.VERCEL_ACCESS_TOKEN }}
     vercel_team_id: ${{ secrets.VERCEL_TEAM_ID }}
     gh_token: ${{ secrets.GITHUB_TOKEN }}
 
 - name: Echo preview
-  run: echo "Preview url is ready ${{ steps.get-vercel-preview-url.outputs.preview_url }}"
+  run: echo "Preview url is ready ${{ steps.get-vercel-preview-url-by-project-id.outputs.preview_url }}"
 ```
 
 ### Inputs
@@ -62,7 +62,7 @@ jobs:
 
       - name: Get Vercel Preview URL
         id: vercel-deployment
-        uses: mishkeTz/get-vercel-preview-url@main
+        uses: mishkeTz/get-vercel-preview-url-by-project-id@main
         with:
           vercel_access_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_team_id: ${{ secrets.VERCEL_TEAM_ID }}
